@@ -56,6 +56,7 @@
                 if (this.readyState == 4 && this.status == 200) {
                     foodDetails(this);
                     delElement(this);
+                    changeVal(this);
                 }
             };
   
@@ -105,6 +106,20 @@
             txt += "Value: " + x.nodeValue;
             document.getElementById("demo").innerHTML = txt;
         }
+
+        // Change the node value
+        function changeVal(xml) 
+        {
+            var x, xmlDoc, txt;
+            xmlDoc = xml.responseXML;
+            x = xmlDoc.getElementsByTagName("name")[0].childNodes[0];
+            txt = x.nodeValue + "<br>";
+            x.nodeValue="English Breakfast";
+            txt += x.nodeValue;
+            document.getElementById("demo1").innerHTML = txt
+        }
+
+
     </script>
 </head>
   
@@ -122,6 +137,12 @@
     <h1>Delete the particular element in the node : </h1>
     <h2>name[1] child[0]</h2>
     <p id="demo"></p>
+
+    <h1>Change the node value : </h1>
+    <h2>name[0] child[0]</h2>
+    <p id="demo1"></p>
+
+
 
 </body>
   
