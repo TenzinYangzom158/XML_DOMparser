@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakfast food Details</title>
+    <!--
+        ii)Write a client side script to perform following operations in your XML file using DOM Parser
+        a)Delete the block of node
+        b)Delete the particular element in the node
+        c)Change the node value
+        d)Add the new element     -->
+
+    <script>
+        function loadXMLDoc(xname)
+        {
+            if(window.XMLHttpRequest)
+            {
+                xhttp=new XMLHttpRequest();
+            }
+            else{
+                xhttp=new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            xhttp.open("GET",xname,false);
+            xhttp.send();
+           return  xhttp.responseXML;
+        }
+
+        // To delete block of node
+        function remove(node)
+        {
+           xmlDoc= loadXMLDoc('food.xml');
+           y = xmlDoc.getElementsByTagName(node)[2];
+           xmlDoc.documentElement.removeChild(y);
+           alert('The Element ' +node+ ' has been removed!');
+        }
+        // To display 
+        function show(element)
+        {
+            x = xmlDoc.getElementsByTagName(element);
+            for(i=0; i < x.length; i++)
+            {
+                document.write(x[i].childNodes[0].nodeValue);
+                document.write("<br\>");
+            }
+        }
+
+    </script>
+</head>
+<body>
+  
+    <input type="button" value="Remove" onclick="remove('food')"/>
+    <input type="button" value="Show" onclick="show('name')"/>
+    
+</body>
+</html>
