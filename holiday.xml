@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style.css"?>
+<Travel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="holidaypackage.xsd">
+  <User>
+    <u_id>1</u_id>
+    <u_name>Tenzin</u_name>
+    <u_address>Tibet</u_address>
+    <u_contact>9740001989</u_contact>
+    <u_email>ten@gmail.com</u_email>
+  </User>
+  <User>
+    <u_id>3</u_id>
+    <u_name>Yangzom</u_name>
+    <u_address>Bangalore</u_address>
+    <u_contact>9740012389</u_contact>
+    <u_email>ten@gmail.com</u_email>
+  </User>
+  <User>
+    <u_id>2</u_id>
+    <u_name>Sonam</u_name>
+    <u_address>Mysore</u_address>
+    <u_contact>9433435989</u_contact>
+    <u_email>ten@gmail.com</u_email>
+  </User>
+</Travel>
